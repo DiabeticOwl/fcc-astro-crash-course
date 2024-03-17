@@ -1,5 +1,7 @@
 ---
 import Header from "../components/Header.astro"
+// Used for optimizing redirection between pages.
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
 	title: string;
@@ -20,6 +22,7 @@ const { title, description = "A community of music producers and enthusiasts",
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<meta property="og:image" content={image}>
+		<ViewTransitions />
 		<title>{title}</title>
 	</head>
 	<body class="min-h-screen">
